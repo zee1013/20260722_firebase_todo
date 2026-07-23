@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos }) {
+function TodoList({ todos, deleteTodo, startEdit }) {
   return (
     <div className="mt-8 space-y-4">
       {todos.length === 0 ? (
@@ -9,7 +9,7 @@ function TodoList({ todos }) {
         </p>
       ) : (
         todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} startEdit={startEdit}/>
         ))
       )}
     </div>
